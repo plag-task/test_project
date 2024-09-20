@@ -1,0 +1,56 @@
+import Link from "next/link";
+import { SVG } from "../assets/icons";
+
+/* eslint-disable @next/next/no-img-element */
+export const List_Of_values_Column_data = [
+  {
+    id: 1,
+    name: (
+      <div className="flex align-items text-[#000]">
+        <span>
+          <img src="/Filter.svg" alt="" className="inline-block" />
+        </span>
+        <span>ID</span>
+      </div>
+    ),
+    key: "id",
+    classname: "w-[20%]",
+  },
+  {
+    id: 2,
+    name: (
+      <div className="flex align-items text-[#000]">
+        <span>
+          <img src="/Filter.svg" alt="" className="inline-block" />
+        </span>
+        <span>Orientation</span>
+      </div>
+    ),
+    key: "orientation",
+    classname: "w-[68%]",
+  },
+  {
+    id: 3,
+    name: "",
+    key: "action",
+  },
+];
+
+export const List_Of_values_Row_Data = [1, 2, 3].map(() => {
+  return {
+    id: Math.floor(Math.random() * 10),
+    orientation: "Find serious",
+    action: (
+      <div className="flex items-center gap-[10px] justify-end">
+        <button>
+          <Link href="/interactive-stories/edit">
+            <img src="/edit.png" alt="" />
+          </Link>
+        </button>
+        <button>
+          <SVG.Delete />
+        </button>
+      </div>
+    ),
+  };
+});
